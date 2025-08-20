@@ -1,0 +1,1 @@
+import{j as r}from"./index-BmZ_dwCv.js";const e=({children:t})=>r.jsx("h2",{className:"text-2xl/7 font-bold sm:truncate sm:tracking-tight text-gray-800 dark:text-gray-300",children:t});export{e as P};
