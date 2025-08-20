@@ -1,0 +1,1 @@
+import{j as r}from"./index-lrQuldHs.js";import{I as n}from"./input-DxgA4gbo.js";const x=({register:s,defaultValue:t,required:o,name:e,label:p,type:a,placeholder:i})=>r.jsx(r.Fragment,{children:r.jsx(n,{...s(`${e}`,{required:o?`${p} is required!`:!1}),defaultValue:t,type:a,placeholder:i,name:e,autoComplete:"new-password"})});export{x as I};
