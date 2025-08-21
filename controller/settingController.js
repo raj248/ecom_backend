@@ -292,11 +292,15 @@ module.exports = {
   addGlobalSetting,
   getGlobalSetting,
   updateGlobalSetting,
+
   addStoreSetting,
   getStoreSetting,
-  getStoreSecretKeys,
   updateStoreSetting,
+
+  getStoreSecretKeys,
+
   getStoreSeoSetting,
+
   addStoreCustomizationSetting,
   getStoreCustomizationSetting,
   updateStoreCustomizationSetting,
