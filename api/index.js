@@ -37,7 +37,18 @@ app.set("trust proxy", 1);
 app.use(express.json({ limit: "4mb" }));
 app.use(helmet());
 app.options("*", cors()); // include before other routes
-app.use(cors());
+app.use(
+  cors({
+    origin: "*",
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS",
+    preflightContinue: false,
+    optionsSuccessStatus: 204,
+    exposedHeaders: ["Content-Range"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+
+    credentials: true,
+  })
+);
 
 //this for route will need for store front, also for admin dashboard
 app.use("/v1/products/", productRoutes);
