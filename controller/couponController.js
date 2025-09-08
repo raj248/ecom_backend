@@ -4,6 +4,7 @@ dayjs.extend(utc);
 
 // const { mongo_connection } = require('../config/db'); // CCDev
 const Coupon = require("../models/Coupon");
+const { sendMobileNotification } = require("../lib/notification/mobile");
 
 const addCoupon = async (req, res) => {
   try {
@@ -138,8 +139,9 @@ const updateStatus = async (req, res) => {
         },
       }
     );
-
+    const coupon = await Coupon.findById(req.params.id);
     console.log("Send notification logic here");
+    sendMobileNotification();
     res.status(200).send({
       message: `Coupon ${
         newStatus === "show" ? "Published" : "Un-Published"
