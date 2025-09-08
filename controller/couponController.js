@@ -9,6 +9,9 @@ const addCoupon = async (req, res) => {
   try {
     const newCoupon = new Coupon(req.body);
     await newCoupon.save();
+    if (req.body.status === "show") {
+      console.log("Send notification logic here");
+    }
     res.send({ message: "Coupon Added Successfully!" });
   } catch (err) {
     res.status(500).send({ message: err.message });
@@ -135,6 +138,8 @@ const updateStatus = async (req, res) => {
         },
       }
     );
+
+    console.log("Send notification logic here");
     res.status(200).send({
       message: `Coupon ${
         newStatus === "show" ? "Published" : "Un-Published"

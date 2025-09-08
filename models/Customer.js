@@ -23,6 +23,11 @@ const customerSchema = new mongoose.Schema(
       required: false,
     },
 
+    fcmToken: {
+      type: String,
+      required: false,
+    },
+
     shippingAddress: {
       type: Object,
       required: false,

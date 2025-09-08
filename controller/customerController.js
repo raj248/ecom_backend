@@ -197,6 +197,12 @@ const loginCustomer = async (req, res) => {
     ) {
       const accessToken = generateAccessToken(customer);
       const refreshToken = generateRefreshToken(customer);
+
+      // ✅ Save FCM token if provided
+      if (req.body.fcmToken) {
+        customer.fcmToken = req.body.fcmToken;
+      }
+
       await customer.save();
 
       res.send({
